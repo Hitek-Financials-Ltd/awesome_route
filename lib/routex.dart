@@ -25,6 +25,26 @@ class Routex {
     );
   }
 
+  static Widget go({
+    required BuildContext context,
+    required Function route,
+    required Widget child,
+    AnimateRoutex animationType = AnimateRoutex.opacityAndSlideFromRight,
+    bool bgTransparent = false,
+    Duration duration = const Duration(seconds: 1),
+    double br = 10.0,
+    Color bgColor = Colors.black26,
+    }){
+      return _navigationWidget(
+      context: context,
+      onTap: route(),
+      text: child,
+      bgTransparent: bgTransparent,
+      br: br,
+      bgColor: bgColor,
+    );
+  }
+
   static Widget clearAndPushOne({
     required BuildContext context,
     required Widget page,
