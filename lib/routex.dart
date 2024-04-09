@@ -25,9 +25,10 @@ class Routex {
     );
   }
 
-  static Widget go({
+  static Widget go<T>({
     required BuildContext context,
-    required Function route,
+    required Function(T) route, // Declaring 'route' as a generic function type
+    //required T parameter,
     required Widget child,
     AnimateRoutex animationType = AnimateRoutex.opacityAndSlideFromRight,
     bool bgTransparent = false,
@@ -37,7 +38,7 @@ class Routex {
     }){
       return _navigationWidget(
       context: context,
-      onTap: route(),
+      onTap: () => route,
       text: child,
       bgTransparent: bgTransparent,
       br: br,
