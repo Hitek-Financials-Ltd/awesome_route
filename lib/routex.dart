@@ -25,7 +25,7 @@ class Routex {
     );
   }
 
-  static Widget go<T>({
+  static Widget go({
     required BuildContext context,
     required Future<void> Function() route, // Declaring 'route' as a generic function type
     required Widget child,
